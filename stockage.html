@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architecture des ordinateurs - Le stockage</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="stockage">
+  <div id="top-nav"></div>
+  <div class="layout">
+    <div id="side-nav"></div>
+    <main class="content">
+      <section class="section">
+        <h1>Le stockage</h1>
+        <p>Le stockage secondaire conserve les données de manière persistante. Il complète la mémoire vive en offrant une grande capacité mais une vitesse moindre.</p>
+        <p class="highlight">Les évolutions récentes avec les SSD NVMe et la mémoire persistante bouleversent le rapport performance/coût.</p>
+      </section>
+
+      <section class="section">
+        <h2>Technologies principales</h2>
+        <div class="infographic">
+          <div class="item">
+            <h3>Disques durs (HDD)</h3>
+            <p>Plateaux magnétiques rotatifs, coût bas par Go, sensibles aux chocs, débits séquentiels élevés.</p>
+          </div>
+          <div class="item">
+            <h3>SSD SATA</h3>
+            <p>Mémoire flash NAND connectée via SATA. Latences réduites, débits limités par l’interface.</p>
+          </div>
+          <div class="item">
+            <h3>SSD NVMe</h3>
+            <p>Connexion PCIe, parallélisme massif, idéal pour les charges intensives et les serveurs.</p>
+          </div>
+          <div class="item">
+            <h3>Stockage réseau</h3>
+            <p>NAS, SAN, cloud : mutualisation des ressources, redondance et accès distant.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Organisation des données</h2>
+        <ul>
+          <li><strong>Systèmes de fichiers :</strong> NTFS, ext4, APFS gèrent la structure et les métadonnées.</li>
+          <li><strong>RAID :</strong> redondance et striping pour améliorer la tolérance aux pannes.</li>
+          <li><strong>Snapshots :</strong> captures d’état pour la restauration rapide.</li>
+        </ul>
+        <p>Le choix du système de fichiers dépend du système d’exploitation, des besoins en performance et en sécurité, ainsi que des contraintes de compatibilité.</p>
+      </section>
+
+      <section class="section">
+        <h2>Gestion des entrées/sorties</h2>
+        <p>Les opérations de stockage sont gérées par des files d’attente et des stratégies de planification (elevator, deadline, BFQ) afin d’optimiser l’ordre des requêtes.</p>
+        <p>La mémoire tampon (cache disque) précharge ou écrit les blocs en différé pour améliorer le débit global, avec des mécanismes de journalisation pour garantir l’intégrité.</p>
+      </section>
+
+      <section class="comments" id="commentaires">
+        <h2>Questions &amp; commentaires</h2>
+        <form id="comment-form" class="comment-form" method="post" action="commentaires.php">
+          <input type="hidden" name="return" value="stockage.html">
+          <div class="row">
+            <label>
+              Nom
+              <input type="text" name="name" placeholder="Votre nom (facultatif)">
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="Votre email (facultatif)">
+            </label>
+          </div>
+          <label>
+            Message
+            <textarea name="message" rows="4" required placeholder="Posez votre question ou partagez votre remarque..."></textarea>
+          </label>
+          <button type="submit">Envoyer</button>
+        </form>
+        <div id="comment-list" class="comment-list"></div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js" defer></script>
+</body>
+</html>

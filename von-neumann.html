@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architecture des ordinateurs - Architecture de von Neumann</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="von-neumann">
+  <div id="top-nav"></div>
+  <div class="layout">
+    <div id="side-nav"></div>
+    <main class="content">
+      <section class="section">
+        <h1>L’architecture de von Neumann</h1>
+        <p>Proposée en 1945, l’architecture de von Neumann définit la structure logique d’un ordinateur moderne. Elle repose sur un stockage commun pour les données et les instructions, et un processeur capable d’exécuter séquentiellement des opérations élémentaires.</p>
+        <p class="highlight">Ce modèle a révolutionné l’informatique en introduisant la programmabilité flexible : les programmes sont eux-mêmes des données pouvant être modifiées en mémoire.</p>
+      </section>
+
+      <section class="section">
+        <h2>Composants principaux</h2>
+        <div class="diagram">
+          <div class="block">Mémoire centrale<br>Stockage des instructions et données</div>
+          <div class="block">Unité de contrôle<br>Sequencement et décodage</div>
+          <div class="block">Unité arithmétique et logique<br>Calcul &amp; comparaisons</div>
+          <div class="block">Bus de données et d’adresses<br>Communication interne</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Cycle de von Neumann</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>1. Fetch</h3>
+            <p>L’unité de contrôle charge l’instruction suivante depuis la mémoire grâce au compteur ordinal (PC) qui indique son adresse.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>2. Decode</h3>
+            <p>L’instruction est décodée : on identifie l’opération à réaliser et les opérandes nécessaires (registres, adresses mémoire).</p>
+          </div>
+          <div class="timeline-item">
+            <h3>3. Execute</h3>
+            <p>L’unité arithmétique et logique effectue le calcul ou l’accès mémoire, puis met à jour les registres et le compteur ordinal.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>4. Write back</h3>
+            <p>Le résultat est stocké en registre ou en mémoire. Le cycle reprend avec l’instruction suivante tant que le programme n’est pas terminé.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Limites du modèle</h2>
+        <ul>
+          <li><strong>Goulot d’étranglement mémoire :</strong> le bus unique limite la vitesse de transfert entre CPU et mémoire.</li>
+          <li><strong>Exécution séquentielle :</strong> difficile d’exploiter le parallélisme sans mécanismes supplémentaires.</li>
+          <li><strong>Vulnérabilité :</strong> le mélange instructions/données ouvre la voie aux attaques par injection de code.</li>
+        </ul>
+        <p>Des évolutions comme l’architecture Harvard modifiée, les pipelines ou les caches multi-niveaux ont été introduites pour atténuer ces limites tout en conservant la compatibilité avec le modèle de base.</p>
+      </section>
+
+      <section class="comments" id="commentaires">
+        <h2>Questions &amp; commentaires</h2>
+        <form id="comment-form" class="comment-form" method="post" action="commentaires.php">
+          <input type="hidden" name="return" value="von-neumann.html">
+          <div class="row">
+            <label>
+              Nom
+              <input type="text" name="name" placeholder="Votre nom (facultatif)">
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="Votre email (facultatif)">
+            </label>
+          </div>
+          <label>
+            Message
+            <textarea name="message" rows="4" required placeholder="Posez votre question ou partagez votre remarque..."></textarea>
+          </label>
+          <button type="submit">Envoyer</button>
+        </form>
+        <div id="comment-list" class="comment-list"></div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js" defer></script>
+</body>
+</html>

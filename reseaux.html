@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architecture des ordinateurs - Réseaux et communication</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="reseaux">
+  <div id="top-nav"></div>
+  <div class="layout">
+    <div id="side-nav"></div>
+    <main class="content">
+      <section class="section">
+        <h1>Réseaux et communication</h1>
+        <p>Les ordinateurs échangent des données au sein de réseaux locaux ou étendus. La communication repose sur des protocoles normalisés et des interfaces matérielles dédiées.</p>
+        <p class="highlight">La pile TCP/IP assure l’interopérabilité mondiale en découpant la communication en couches indépendantes.</p>
+      </section>
+
+      <section class="section">
+        <h2>Pile réseau</h2>
+        <table>
+          <tr>
+            <th>Couche</th>
+            <th>Rôle</th>
+            <th>Exemples</th>
+          </tr>
+          <tr>
+            <td>Application</td>
+            <td>Services aux applications utilisateurs</td>
+            <td>HTTP, DNS, SMTP</td>
+          </tr>
+          <tr>
+            <td>Transport</td>
+            <td>Gestion des sessions, fiabilité</td>
+            <td>TCP, UDP, QUIC</td>
+          </tr>
+          <tr>
+            <td>Internet</td>
+            <td>Adressage et routage des paquets</td>
+            <td>IP, ICMP</td>
+          </tr>
+          <tr>
+            <td>Lien</td>
+            <td>Transmission sur le support physique</td>
+            <td>Ethernet, Wi-Fi, 5G</td>
+          </tr>
+        </table>
+      </section>
+
+      <section class="section">
+        <h2>Équipements</h2>
+        <div class="infographic">
+          <div class="item">
+            <h3>Commutateurs</h3>
+            <p>Relient les machines au sein d’un réseau local et orientent les trames selon les adresses MAC.</p>
+          </div>
+          <div class="item">
+            <h3>Routeurs</h3>
+            <p>Assurent la connectivité entre réseaux, prennent des décisions de routage selon des tables mises à jour.</p>
+          </div>
+          <div class="item">
+            <h3>Points d’accès</h3>
+            <p>Gestion des transmissions radio (Wi-Fi, Bluetooth) et authentification des clients.</p>
+          </div>
+          <div class="item">
+            <h3>Pare-feu</h3>
+            <p>Filtrent les flux selon des règles de sécurité et préviennent les intrusions.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Qualité de service et sécurité</h2>
+        <ul>
+          <li><strong>QoS :</strong> priorisation des flux critiques (voix, vidéo) via la DiffServ, VLAN, MPLS.</li>
+          <li><strong>VPN :</strong> tunnels chiffrés pour sécuriser les communications à distance.</li>
+          <li><strong>Monitoring :</strong> supervision du réseau via SNMP, NetFlow, Syslog.</li>
+        </ul>
+        <p>La segmentation réseau et l’authentification forte sont des piliers indispensables à la sécurité des architectures distribuées.</p>
+      </section>
+
+      <section class="comments" id="commentaires">
+        <h2>Questions &amp; commentaires</h2>
+        <form id="comment-form" class="comment-form" method="post" action="commentaires.php">
+          <input type="hidden" name="return" value="reseaux.html">
+          <div class="row">
+            <label>
+              Nom
+              <input type="text" name="name" placeholder="Votre nom (facultatif)">
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="Votre email (facultatif)">
+            </label>
+          </div>
+          <label>
+            Message
+            <textarea name="message" rows="4" required placeholder="Posez votre question ou partagez votre remarque..."></textarea>
+          </label>
+          <button type="submit">Envoyer</button>
+        </form>
+        <div id="comment-list" class="comment-list"></div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js" defer></script>
+</body>
+</html>

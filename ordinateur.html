@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architecture des ordinateurs - Qu’est-ce qu’un ordinateur ?</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="ordinateur">
+  <div id="top-nav"></div>
+  <div class="layout">
+    <div id="side-nav"></div>
+    <main class="content">
+      <section class="section">
+        <h1>Qu’est-ce qu’un ordinateur&nbsp;?</h1>
+        <p>L’ordinateur est un système électronique programmable capable de recevoir, stocker, traiter et restituer des informations. Il repose sur l’exécution de programmes qui décrivent de manière précise la suite d’instructions à réaliser.</p>
+        <p class="highlight">Un ordinateur ne se limite pas à un PC de bureau : smartphones, consoles de jeux, objets connectés ou serveurs sont autant d’ordinateurs spécialisés.</p>
+        <div class="diagram">
+          <div class="block">Entrée<br>(Input)</div>
+          <div class="block">Traitement<br>(CPU)</div>
+          <div class="block">Mémoire<br>Vive &amp; stockage</div>
+          <div class="block">Sortie<br>(Output)</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Caractéristiques clés</h2>
+        <table>
+          <tr>
+            <th>Caractéristique</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>Programmable</td>
+            <td>Les instructions peuvent être modifiées afin de faire évoluer le comportement de la machine.</td>
+          </tr>
+          <tr>
+            <td>Automatique</td>
+            <td>Une fois le programme lancé, l’ordinateur exécute les tâches sans intervention humaine.</td>
+          </tr>
+          <tr>
+            <td>Universel</td>
+            <td>Gr&acirc;ce au modèle de Turing, tout calcul peut être réalisé s’il est formulé dans un programme.</td>
+          </tr>
+          <tr>
+            <td>Numérique</td>
+            <td>Les informations sont représentées par des valeurs discrètes (bits), ce qui garantit reproductibilité et précision.</td>
+          </tr>
+        </table>
+      </section>
+
+      <section class="section">
+        <h2>Du matériel aux logiciels</h2>
+        <p>L’ordinateur s’articule autour d’une couche matérielle (hardware) qui fournit la puissance de calcul et d’une couche logicielle (software) qui exploite ces ressources.</p>
+        <div class="infographic">
+          <div class="item">
+            <h3>Matériel</h3>
+            <ul>
+              <li>Composants physiques assemblés</li>
+              <li>Architecture définie par le constructeur</li>
+              <li>Contraintes de performance et d’énergie</li>
+            </ul>
+          </div>
+          <div class="item">
+            <h3>Logiciel</h3>
+            <ul>
+              <li>Code exécutable, systèmes d’exploitation</li>
+              <li>Interface avec l’utilisateur</li>
+              <li>Adaptabilité dans le temps</li>
+            </ul>
+          </div>
+          <div class="item">
+            <h3>Interaction</h3>
+            <ul>
+              <li>Pilotes pour piloter le matériel</li>
+              <li>Appels système et bibliothèques</li>
+              <li>Gestion des ressources partagées</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="comments" id="commentaires">
+        <h2>Questions &amp; commentaires</h2>
+        <form id="comment-form" class="comment-form" method="post" action="commentaires.php">
+          <input type="hidden" name="return" value="ordinateur.html">
+          <div class="row">
+            <label>
+              Nom
+              <input type="text" name="name" placeholder="Votre nom (facultatif)">
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="Votre email (facultatif)">
+            </label>
+          </div>
+          <label>
+            Message
+            <textarea name="message" rows="4" required placeholder="Posez votre question ou partagez votre remarque..."></textarea>
+          </label>
+          <button type="submit">Envoyer</button>
+        </form>
+        <div id="comment-list" class="comment-list"></div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architecture des ordinateurs - Le CPU</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="cpu">
+  <div id="top-nav"></div>
+  <div class="layout">
+    <div id="side-nav"></div>
+    <main class="content">
+      <section class="section">
+        <h1>Le processeur (CPU)</h1>
+        <p>Le CPU est l’unité de traitement générale de l’ordinateur. Il exécute les instructions machine, coordonne les opérations et gère les échanges avec les autres composants.</p>
+        <p class="highlight">La performance d’un processeur dépend de son architecture interne (pipeline, cœurs, cache), de sa fréquence et de l’efficacité des instructions.</p>
+      </section>
+
+      <section class="section">
+        <h2>Organisation interne</h2>
+        <div class="diagram">
+          <div class="block">Registres<br>Stockage ultra-rapide</div>
+          <div class="block">Unité arithmétique et logique (UAL)<br>Calculs</div>
+          <div class="block">Unité de contrôle<br>Séquençage</div>
+          <div class="block">Cache L1/L2/L3<br>Réduction de latence</div>
+        </div>
+        <p>Les registres contiennent les données manipulées instantanément. Le cache hiérarchisé minimise les temps d’accès à la mémoire principale.</p>
+      </section>
+
+      <section class="section">
+        <h2>Pipeline d’instructions</h2>
+        <p>Le pipeline permet de découper l’exécution d’une instruction en étapes successives (fetch, decode, execute, memory, writeback) exécutées en parallèle sur plusieurs instructions distinctes.</p>
+        <ul>
+          <li><strong>Superscalaire :</strong> plusieurs instructions peuvent entrer dans le pipeline dans le même cycle.</li>
+          <li><strong>Out-of-order :</strong> réordonnancement dynamique pour exploiter le parallélisme.</li>
+          <li><strong>Prédiction de branche :</strong> spéculation sur l’issue des tests pour éviter les bulles.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Jeux d’instructions</h2>
+        <table>
+          <tr>
+            <th>Famille</th>
+            <th>Philosophie</th>
+            <th>Exemples</th>
+          </tr>
+          <tr>
+            <td>CISC</td>
+            <td>Instructions complexes, code plus compact, micro-codage.</td>
+            <td>x86, VAX</td>
+          </tr>
+          <tr>
+            <td>RISC</td>
+            <td>Instructions simples et régulières, pipeline optimisé.</td>
+            <td>ARM, MIPS, RISC-V</td>
+          </tr>
+          <tr>
+            <td>ISA spécialisées</td>
+            <td>Extensions pour le calcul vectoriel, cryptographie ou IA.</td>
+            <td>AVX, NEON, Tensor Cores</td>
+          </tr>
+        </table>
+      </section>
+
+      <section class="comments" id="commentaires">
+        <h2>Questions &amp; commentaires</h2>
+        <form id="comment-form" class="comment-form" method="post" action="commentaires.php">
+          <input type="hidden" name="return" value="cpu.html">
+          <div class="row">
+            <label>
+              Nom
+              <input type="text" name="name" placeholder="Votre nom (facultatif)">
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="Votre email (facultatif)">
+            </label>
+          </div>
+          <label>
+            Message
+            <textarea name="message" rows="4" required placeholder="Posez votre question ou partagez votre remarque..."></textarea>
+          </label>
+          <button type="submit">Envoyer</button>
+        </form>
+        <div id="comment-list" class="comment-list"></div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js" defer></script>
+</body>
+</html>

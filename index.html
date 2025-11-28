@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architecture et fonctionnement des ordinateurs - Accueil</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' ry='20' fill='%231d4ed8'/%3E%3Cpath d='M30 30h40v10H30zM30 45h40v25H30z' fill='%23fff'/%3E%3Ccircle cx='40' cy='57' r='4' fill='%230ea5e9'/%3E%3Ccircle cx='60' cy='57' r='4' fill='%230ea5e9'/%3E%3C/svg%3E">
+</head>
+<body data-page="accueil">
+  <div id="top-nav"></div>
+  <div class="layout">
+    <div id="side-nav"></div>
+    <main class="content">
+      <section class="hero-card">
+        <div class="hero-text">
+          <h1>Comprendre l’architecture des ordinateurs</h1>
+          <p>Plongez dans le fonctionnement interne des machines qui nous entourent. Ce parcours pédagogique vous guide
+            pas à pas pour découvrir les composants matériels, les principes d’architecture et les mécanismes logiciels
+            essentiels.</p>
+          <div class="hero-actions">
+            <a href="von-neumann.html">Explorer l’architecture</a>
+            <a href="glossaire.html" class="secondary">Consulter le glossaire</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=900&q=60" alt="Carte mère et circuits électroniques">
+        </div>
+      </section>
+
+      <section class="info-grid">
+        <article class="info-card">
+          <h2>Découvrir les bases</h2>
+          <p>Comprenez ce qui différencie un ordinateur d’un simple appareil électronique, et comment ses composants collaborent pour exécuter des programmes.</p>
+          <ul>
+            <li>Les composants fondamentaux</li>
+            <li>Cycle de traitement de l’information</li>
+            <li>Rôle du système d’exploitation</li>
+          </ul>
+        </article>
+        <article class="info-card">
+          <h2>Explorer la technique</h2>
+          <p>Décryptez l’architecture de von Neumann, le fonctionnement interne du CPU, les hiérarchies de mémoire et les interfaces d’entrée/sortie.</p>
+          <ul>
+            <li>Datapath et unité de contrôle</li>
+            <li>Mémoire vive, cache et stockage</li>
+            <li>Périphériques et bus de communication</li>
+          </ul>
+        </article>
+        <article class="info-card">
+          <h2>Comprendre l’écosystème</h2>
+          <p>Faites le lien entre matériel, logiciels et réseaux pour appréhender la sécurité, la virtualisation et l’évolution des architectures modernes.</p>
+          <ul>
+            <li>Gestion des ressources</li>
+            <li>Communications réseau</li>
+            <li>Bonnes pratiques de sécurité</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section">
+        <h1>Un parcours structuré et progressif</h1>
+        <p class="highlight">Ce site est organisé en modules thématiques indépendants. Chaque page approfondit un concept clé et propose des diagrammes, des exemples concrets ainsi que des définitions pour aller plus loin.</p>
+        <div class="infographic">
+          <div class="item">
+            <h3>Matériel</h3>
+            <p>CPU, mémoire, stockage et périphériques : apprenez comment ces briques dialoguent et forment une machine cohérente.</p>
+          </div>
+          <div class="item">
+            <h3>Logiciel</h3>
+            <p>Systèmes d’exploitation, pilotes et applications gèrent les ressources matérielles et offrent des services aux utilisateurs.</p>
+          </div>
+          <div class="item">
+            <h3>Communication</h3>
+            <p>Les protocoles réseau et les bus internes permettent aux ordinateurs d’échanger des données en toute fiabilité.</p>
+          </div>
+          <div class="item">
+            <h3>Sécurité</h3>
+            <p>Des menaces matérielles et logicielles nécessitent des mécanismes de protection, de chiffrement et de contrôle d’accès.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="comments" id="commentaires">
+        <h2>Questions &amp; commentaires</h2>
+        <form id="comment-form" class="comment-form" method="post" action="commentaires.php">
+          <input type="hidden" name="return" value="index.html">
+          <div class="row">
+            <label>
+              Nom
+              <input type="text" name="name" placeholder="Votre nom (facultatif)">
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="Votre email (facultatif)">
+            </label>
+          </div>
+          <label>
+            Message
+            <textarea name="message" rows="4" required placeholder="Posez votre question ou partagez votre remarque..."></textarea>
+          </label>
+          <button type="submit">Envoyer</button>
+        </form>
+        <div id="comment-list" class="comment-list"></div>
+      </section>
+
+      <footer class="footer">
+        <div class="grid">
+          <div>
+            <strong>Objectif pédagogique</strong><br>
+            Faciliter la compréhension des architectures matérielles et logicielles grâce à des explications visuelles et accessibles.
+          </div>
+          <div>
+            <strong>Public visé</strong><br>
+            Étudiants, enseignants et curieux qui souhaitent disposer d’une base solide sur l’informatique fondamentale.
+          </div>
+          <div>
+            <strong>Ressources</strong><br>
+            Références académiques, documentation constructeur, manuels de systèmes d’exploitation et normes ouvertes.
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+  <script src="script.js" defer></script>
+</body>
+</html>

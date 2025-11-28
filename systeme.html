@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architecture des ordinateurs - Système d’exploitation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="systeme">
+  <div id="top-nav"></div>
+  <div class="layout">
+    <div id="side-nav"></div>
+    <main class="content">
+      <section class="section">
+        <h1>Le système d’exploitation</h1>
+        <p>Le système d’exploitation (OS) est le logiciel qui orchestre l’utilisation du matériel. Il fournit une interface entre les applications et les ressources de la machine.</p>
+        <p class="highlight">Ses rôles principaux : gérer les processus, la mémoire, les fichiers, les périphériques et assurer la sécurité.</p>
+      </section>
+
+      <section class="section">
+        <h2>Architecture logicielle</h2>
+        <div class="diagram">
+          <div class="block">Applications</div>
+          <div class="block">Appels système &amp; API</div>
+          <div class="block">Noyau (kernel)</div>
+          <div class="block">Pilotes &amp; matériel</div>
+        </div>
+        <p>Le noyau peut être monolithique (Linux), à micro-noyau (Minix, QNX) ou hybride (Windows). Les appels système permettent aux applications d’accéder aux services de haut niveau de manière contrôlée.</p>
+      </section>
+
+      <section class="section">
+        <h2>Gestion des processus</h2>
+        <ul>
+          <li><strong>Planification :</strong> priorités, quantum, algorithmes (Round Robin, CFS).</li>
+          <li><strong>Communication :</strong> IPC (pipes, sockets, mémoire partagée).</li>
+          <li><strong>Synchronisation :</strong> verrous, sémaphores, sections critiques.</li>
+        </ul>
+        <p>Le système d’exploitation garantit l’illusion du parallélisme même sur un nombre limité de cœurs physiques.</p>
+      </section>
+
+      <section class="section">
+        <h2>Gestion des fichiers</h2>
+        <p>Les systèmes d’exploitation mettent à disposition des abstractions de fichiers et de répertoires, cachant la complexité des supports physiques.</p>
+        <div class="info-banner">
+          <strong>Fonctions clés</strong>
+          <span>Gestion des droits d’accès, journalisation des métadonnées, partage réseau et chiffrement transparent.</span>
+        </div>
+      </section>
+
+      <section class="comments" id="commentaires">
+        <h2>Questions &amp; commentaires</h2>
+        <form id="comment-form" class="comment-form" method="post" action="commentaires.php">
+          <input type="hidden" name="return" value="systeme.html">
+          <div class="row">
+            <label>
+              Nom
+              <input type="text" name="name" placeholder="Votre nom (facultatif)">
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="Votre email (facultatif)">
+            </label>
+          </div>
+          <label>
+            Message
+            <textarea name="message" rows="4" required placeholder="Posez votre question ou partagez votre remarque..."></textarea>
+          </label>
+          <button type="submit">Envoyer</button>
+        </form>
+        <div id="comment-list" class="comment-list"></div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js" defer></script>
+</body>
+</html>

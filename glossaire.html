@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architecture des ordinateurs - Glossaire</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="glossaire">
+  <div id="top-nav"></div>
+  <div class="layout">
+    <div id="side-nav"></div>
+    <main class="content">
+      <section class="section">
+        <h1>Glossaire</h1>
+        <p>Retrouvez ici les principaux termes utilisés dans ce cours. Chaque définition vous aidera à consolider votre compréhension de l’architecture des ordinateurs.</p>
+      </section>
+
+      <section class="section">
+        <h2>Termes clés</h2>
+        <div class="glossary-grid">
+          <div class="glossary-card">
+            <h3>Bit</h3>
+            <p>Plus petite unité d’information binaire, pouvant prendre la valeur 0 ou 1.</p>
+          </div>
+          <div class="glossary-card">
+            <h3>Bus</h3>
+            <p>Canal de communication permettant de transférer des données entre composants matériels.</p>
+          </div>
+          <div class="glossary-card">
+            <h3>Cache</h3>
+            <p>Mémoire rapide destinée à stocker temporairement des données pour réduire les temps d’accès.</p>
+          </div>
+          <div class="glossary-card">
+            <h3>Kernel</h3>
+            <p>Cœur du système d’exploitation qui gère les ressources et assure l’interface avec le matériel.</p>
+          </div>
+          <div class="glossary-card">
+            <h3>Pipeline</h3>
+            <p>Mécanisme permettant de traiter plusieurs instructions simultanément en les découpant en étapes.</p>
+          </div>
+          <div class="glossary-card">
+            <h3>RAM</h3>
+            <p>Mémoire vive volatile utilisée pour stocker les programmes et données en cours d’exécution.</p>
+          </div>
+          <div class="glossary-card">
+            <h3>ROM</h3>
+            <p>Mémoire en lecture seule contenant généralement le microprogramme ou le firmware initial.</p>
+          </div>
+          <div class="glossary-card">
+            <h3>ISA</h3>
+            <p>Instruction Set Architecture : ensemble des instructions que le processeur peut exécuter.</p>
+          </div>
+          <div class="glossary-card">
+            <h3>MMU</h3>
+            <p>Memory Management Unit : composant chargé de la traduction des adresses virtuelles en adresses physiques.</p>
+          </div>
+          <div class="glossary-card">
+            <h3>Thread</h3>
+            <p>Flux d’exécution léger partageant le même espace mémoire qu’un processus.</p>
+          </div>
+          <div class="glossary-card">
+            <h3>Virtualisation</h3>
+            <p>Technique permettant d’exécuter plusieurs systèmes isolés sur un même matériel physique.</p>
+          </div>
+          <div class="glossary-card">
+            <h3>DMA</h3>
+            <p>Direct Memory Access : transfert direct de données entre périphériques et mémoire sans passer par le CPU.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="comments" id="commentaires">
+        <h2>Questions &amp; commentaires</h2>
+        <form id="comment-form" class="comment-form" method="post" action="commentaires.php">
+          <input type="hidden" name="return" value="glossaire.html">
+          <div class="row">
+            <label>
+              Nom
+              <input type="text" name="name" placeholder="Votre nom (facultatif)">
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="Votre email (facultatif)">
+            </label>
+          </div>
+          <label>
+            Message
+            <textarea name="message" rows="4" required placeholder="Posez votre question ou partagez votre remarque..."></textarea>
+          </label>
+          <button type="submit">Envoyer</button>
+        </form>
+        <div id="comment-list" class="comment-list"></div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js" defer></script>
+</body>
+</html>
